@@ -1,0 +1,64 @@
+<div class="registro-container">
+  <div class="registro-card">
+    <h2>Registro de empresa</h2>
+
+    <form (ngSubmit)="onRegistrarEmpresa()" #empresaForm="ngForm">
+      <div class="input-group">
+        <label for="nombreEmpresa">Nombre de la empresa</label>
+        <input
+          type="text"
+          id="nombreEmpresa"
+          name="nombreEmpresa"
+          [(ngModel)]="nombreEmpresa"
+          required
+          placeholder="Ej: Soluciones Tech S.A."
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="nit">NIT o Identificador</label>
+        <input
+          type="text"
+          id="nit"
+          name="nit"
+          [(ngModel)]="nitEmpresa"
+          required
+          placeholder="Ej: 900123456-7"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="correo">Correo de contacto</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          [(ngModel)]="correoEmpresa"
+          required
+          placeholder="contacto@empresa.com"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="admin">Usuario administrador inicial</label>
+        <input
+          type="text"
+          id="admin"
+          name="admin"
+          [(ngModel)]="adminEmpresa"
+          required
+          placeholder="Ej: adminEmpresa"
+        />
+      </div>
+
+      <button type="submit" [disabled]="empresaForm.invalid">
+        Registrar empresa
+      </button>
+
+      <p class="login-text">
+        ¿Ya tienes una cuenta?
+        <a routerLink="/login">Inicia sesión aquí</a>
+      </p>
+    </form>
+  </div>
+</div>
