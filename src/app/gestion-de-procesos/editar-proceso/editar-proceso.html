@@ -1,0 +1,68 @@
+<div class="editar-proceso-container">
+  <div class="editar-proceso-card">
+    <h2>Editar proceso</h2>
+
+    <form (ngSubmit)="guardarCambios()" #editarForm="ngForm">
+      <div class="input-group">
+        <label for="nombre">Nombre del proceso</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="nombreProceso"
+          required
+          placeholder="Ej: Gestión de reservas"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="descripcion">Descripción</label>
+        <textarea
+          id="descripcion"
+          name="descripcion"
+          [(ngModel)]="descripcionProceso"
+          rows="3"
+          required
+          placeholder="Actualiza la descripción del proceso"
+        ></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="categoria">Categoría</label>
+        <select
+          id="categoria"
+          name="categoria"
+          [(ngModel)]="categoriaProceso"
+          required
+        >
+          <option value="">Seleccione una categoría</option>
+          <option value="operativo">Operativo</option>
+          <option value="administrativo">Administrativo</option>
+          <option value="servicio">Servicio</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado" [(ngModel)]="estadoProceso" required>
+          <option value="borrador">Borrador</option>
+          <option value="publicado">Publicado</option>
+        </select>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" [disabled]="editarForm.invalid || !permisoEdicionProceso">
+          Guardar cambios
+        </button>
+        <button type="button" (click)="cancelar()">Cancelar</button>
+      </div>
+
+      <p *ngIf="!permisoEdicionProceso" class="status-message">
+        No tienes permisos para editar este proceso.
+      </p>
+      <p *ngIf="mensajeHistorialProceso" class="status-message">
+        {{ mensajeHistorialProceso }}
+      </p>
+    </form>
+  </div>
+</div>
