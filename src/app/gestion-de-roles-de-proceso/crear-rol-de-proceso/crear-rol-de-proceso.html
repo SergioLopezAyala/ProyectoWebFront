@@ -1,0 +1,37 @@
+<div class="role-container">
+  <div class="role-card">
+    <h2>Crear Rol de Proceso</h2>
+
+    <form (ngSubmit)="onCrearRol()" #rolForm="ngForm">
+      <div class="input-group">
+        <label for="nombreRol">Nombre del rol</label>
+        <input
+          type="text"
+          id="nombreRol"
+          name="nombreRol"
+          [(ngModel)]="nombreRol"
+          required
+          placeholder="Ej: Analista, Supervisor, Auditor"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="descripcion">Descripción</label>
+        <textarea
+          id="descripcion"
+          name="descripcion"
+          [(ngModel)]="descripcion"
+          required
+          placeholder="Describe brevemente las funciones del rol"
+          rows="4"
+        ></textarea>
+      </div>
+
+      <button type="submit" [disabled]="rolForm.invalid">Crear Rol</button>
+
+      <p class="note-text">
+        Este rol quedará asociado a la empresa y podrá usarse en múltiples procesos.
+      </p>
+    </form>
+  </div>
+</div>
