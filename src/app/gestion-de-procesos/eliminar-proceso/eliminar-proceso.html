@@ -1,0 +1,21 @@
+<div class="eliminar-proceso-container">
+  <div class="eliminar-proceso-card">
+    <h2>Eliminar Proceso</h2>
+
+    <p class="confirmacion-texto">
+      ¿Estás seguro de que deseas eliminar el proceso
+      <strong>{{ nombreProceso }}</strong>?
+    </p>
+
+    <div class="boton-accion" *ngIf="!confirmado">
+      <button class="btn-eliminar" (click)="confirmarEliminacion()">Eliminar</button>
+      <button class="btn-cancelar" (click)="cancelar()">Cancelar</button>
+    </div>
+
+    <p class="estado-proceso">
+      Estado actual: <strong>{{ estadoProceso }}</strong>
+    </p>
+
+    <p *ngIf="mensajeConfirmacion" class="mensaje">{{ mensajeConfirmacion }}</p>
+  </div>
+</div>

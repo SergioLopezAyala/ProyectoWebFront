@@ -1,0 +1,97 @@
+/* Contenedor principal */
+.eliminar-proceso-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tarjeta */
+.eliminar-proceso-card {
+  background: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 420px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Título */
+.eliminar-proceso-card h2 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Texto de confirmación */
+.confirmacion-texto {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Estado del proceso */
+.estado-proceso {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* Botones */
+.boton-accion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 0 0.5rem;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-eliminar:hover {
+  background-color: #b02a37;
+}
+
+.btn-cancelar {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-cancelar:hover {
+  background-color: #565e64;
+}
+
+/* Mensaje de confirmación */
+.mensaje {
+  margin-top: 1.5rem;
+  color: #28a745;
+  font-weight: 500;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
