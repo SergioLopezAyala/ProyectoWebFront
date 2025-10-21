@@ -7,6 +7,7 @@ export const routes: Routes = [
     { path: 'crear-proceso', loadComponent: () => import('./gestion-de-procesos/crear-proceso/crear-proceso').then(m => m.CrearProceso) },
     { path: 'editar-proceso', loadComponent: () => import('./gestion-de-procesos/editar-proceso/editar-proceso').then(m => m.EditarProceso) },
     { path: 'eliminar-proceso', loadComponent: () => import('./gestion-de-procesos/eliminar-proceso/eliminar-proceso').then(m => m.EliminarProceso) },
+    { path: 'consultar-proceso', loadComponent: () => import('./gestion-de-procesos/consultar-proceso/consultar-proceso').then(m => m.ConsultarProceso) },
     { path: '**', redirectTo: '' },
 
 ];

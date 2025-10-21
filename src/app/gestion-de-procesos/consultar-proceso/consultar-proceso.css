@@ -1,0 +1,280 @@
+/* Fondo general */
+.consultar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Tarjeta principal */
+.consultar-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 900px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Encabezado */
+.consultar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.consultar-header h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-bar input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.search-bar button {
+  padding: 0.7rem 1.2rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* Filtro panel */
+.filter-panel {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-panel h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.filter-panel label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.filter-panel input,
+.filter-panel select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Lista de procesos */
+.procesos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.proceso-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.proceso-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.proceso-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.proceso-id {
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.3rem;
+}
+
+.proceso-detalles span {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+button.ver-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+button.ver-btn:hover {
+  background-color: #1e7e34;
+}
+
+/* Detalles del proceso (en modal ahora) */
+.detalles {
+  margin-top: 1rem;
+  background-color: #f1f9ff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #b3e0ff;
+}
+
+.detalles h3 {
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.detalles ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.detalles ul li {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal {
+  background: white;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #007bff;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 1rem 1.2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.modal-body p {
+  margin: 0.4rem 0;
+  color: #333;
+}
+
+.modal-body h4 {
+  margin-top: 1rem;
+  color: #007bff;
+}
+
+.modal-body ul {
+  margin: 0.4rem 0 0 1rem;
+  padding: 0;
+}
+
+.modal-body li {
+  margin: 0.25rem 0;
+}
+
+/* Footer */
+.modal-footer {
+  padding: 0.8rem 1.2rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer button {
+  padding: 0.6rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.modal-footer button:hover {
+  background: #0056b3;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
