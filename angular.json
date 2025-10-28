@@ -21,9 +21,6 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -52,10 +49,13 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "front:build:production"
@@ -78,9 +78,6 @@
                 "glob": "**/*",
                 "input": "public"
               }
-            ],
-            "styles": [
-              "src/styles.css"
             ]
           }
         }
