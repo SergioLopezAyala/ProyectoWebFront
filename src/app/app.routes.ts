@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ModeladorProcesoComponent } from './modelador-proceso/modelador-proceso';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -7,7 +8,7 @@ export const routes: Routes = [
     { path: 'login', loadComponent: () => import('./autenticacion-y-cuentas/login/login').then(m => m.Login) },
     { path: 'registro-de-empresa', loadComponent: () => import('./autenticacion-y-cuentas/registro-de-empresa/registro-de-empresa').then(m => m.RegistroDeEmpresa) },
 
-
+    { path: 'modelador', component: ModeladorProcesoComponent,},
     { path: 'crear-proceso', loadComponent: () => import('./gestion-de-procesos/crear-proceso/crear-proceso').then(m => m.CrearProceso) },
     { path: 'editar-proceso', loadComponent: () => import('./gestion-de-procesos/editar-proceso/editar-proceso').then(m => m.EditarProceso) },
     { path: 'eliminar-proceso', loadComponent: () => import('./gestion-de-procesos/eliminar-proceso/eliminar-proceso').then(m => m.EliminarProceso) },
