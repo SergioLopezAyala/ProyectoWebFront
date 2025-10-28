@@ -1,5 +1,14 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { NgFor } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
+import {
+  NgForOf,
+  DecimalPipe,
+  JsonPipe,
+} from '@angular/common';
 
 interface ActividadNodo {
   id: number;
@@ -13,12 +22,13 @@ interface ActividadNodo {
 @Component({
   selector: 'app-modelador-proceso',
   standalone: true,
-  imports: [NgFor],
+  // IMPORTS que habilitan *ngFor, |number y |json en el HTML
+  imports: [NgForOf, DecimalPipe, JsonPipe],
   templateUrl: './modelador-proceso.html',
   styleUrl: './modelador-proceso.css',
 })
 export class ModeladorProcesoComponent {
-  // TODO: reemplazar esto por GET /api/activities/list más adelante
+  // Esto luego lo cargaremos del backend con GET /api/activities/list
   actividades: ActividadNodo[] = [
     {
       id: 1,
@@ -91,7 +101,7 @@ export class ModeladorProcesoComponent {
     let newLeft = event.clientX - this.canvasRect.left - this.offsetX;
     let newTop = event.clientY - this.canvasRect.top - this.offsetY;
 
-    // límites para que no salga del canvas
+    // límites para no salir del canvas
     const maxLeft = this.canvasRect.width - nodoEl.offsetWidth;
     const maxTop = this.canvasRect.height - nodoEl.offsetHeight;
 
@@ -159,7 +169,7 @@ export class ModeladorProcesoComponent {
   }
 
   // ========================
-  // Para debug visual
+  // Para debug en la UI
   // ========================
   getLayoutActual() {
     const layout: Record<number, { x: number; y: number; name: string }> = {};

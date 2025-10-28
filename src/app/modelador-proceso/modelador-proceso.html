@@ -1,0 +1,25 @@
+<div id="canvas">
+  <div
+    #nodoRef
+    class="node"
+    *ngFor="let n of actividades"
+    [attr.data-id]="n.id"
+    [style.left.px]="n.x"
+    [style.top.px]="n.y"
+    (mousedown)="onMouseDownNodo($event, n)"
+  >
+    <div class="node-header">
+      <span>{{ n.type }}</span>
+      <span>{{ n.name }}</span>
+    </div>
+    <div class="node-body">
+      {{ n.description }}
+      <br />
+      (x: {{ n.x | number:'1.0-0' }}, y: {{ n.y | number:'1.0-0' }})
+    </div>
+  </div>
+
+  <div class="coords-popup">
+    <pre>{{ getLayoutActual() | json }}</pre>
+  </div>
+</div>
